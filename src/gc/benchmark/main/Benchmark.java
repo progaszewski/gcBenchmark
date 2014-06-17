@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Benchmark {
-	public final static int N = 1000000;
-	public final static int M = 10;
+	public final static int N = 3000000;
+	public final static int M = 100;
 
 	public static void main(String[] args){
 
@@ -17,39 +17,25 @@ public class Benchmark {
 			arg = args[0] + "\n";
 		}
 
-
-
 		int count = M;
 		for(int k = 0; k < M; k++){
-			List<List<ClassToTest>> ctts = new ArrayList<List<ClassToTest>>();
+			ClassToTest[] ctts = new ClassToTest[10000];
 			int check = 0;
 			long startTime = System.currentTimeMillis();
 			for(int i = 0; i < N; i++){
-				if(check++ < 24000){
-					ctts.add(new ArrayList<ClassToTest>(){{
-						
-						add(new ClassToTest(11, "dddddddddddddd"));
-						add(new ClassToTest(11, "11111111111111"));
-						add(new ClassToTest(11, "11111111111111"));
-						add(new ClassToTest(11, "11111111111111"));
-						add(new ClassToTest(11, "11111111111111"));
-						add(new ClassToTest(11, "11111111111111"));
-						add(new ClassToTest(11, "11111111111111"));
-					}});
-					//List<ClassToTest> s = ctts.get(check - 1);
+			
+				if(check++ < 10000){
+					ctts[check - 1] = new ClassToTest(i, String.valueOf(i));
 				}else{
 					check = 0;
-					//System.out.println(ctts.size());
-					//ctts.removeAll(ctts);
-					ctts = new ArrayList<List<ClassToTest>>();
+					ctts = new ClassToTest[10000];
 				}
-				
 
 			}
-			System.out.println(count-- + ".");
+			//System.out.println(count-- + ".");
 			times += System.currentTimeMillis() - startTime;
 		}
 
-		System.out.println(arg + "Czas: " + (((double) times)/(double)M) / 1000.0);
+		System.out.println(arg + "Sredni czas dla " + N +" alokacji: " + (((double) times)/(double)M) / 1000.0);
 	}
 }

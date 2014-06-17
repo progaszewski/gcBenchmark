@@ -1,0 +1,29 @@
+Platforma testowa:
+Procesor: Intel i7-4700MQ 2.4G
+RAM: 8GB DDR3
+Dyst: SSHD 1T + 8G
+
+
+Konfigurcaja:
+-Xmx32m -Xms16m -Xmn8m
+
+ParallelGC
+Sredni czas dla 3000000 alokacji: 3.70576
+
+ParallelOldGC
+Sredni czas dla 3000000 alokacji: 3.18309
+
+G1GC
+Sredni czas dla 3000000 alokacji: 4.45127
+
+Konfiguracja:
+-Xmx512m -Xms256m -Xmn128m 
+
+ParallelGC
+Sredni czas dla 3000000 alokacji: 0.43533
+
+ParallelOldGC
+Sredni czas dla 3000000 alokacji: 0.43367
+
+G1GC
+Sredni czas dla 3000000 alokacji: 0.56998
