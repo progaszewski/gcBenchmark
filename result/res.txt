@@ -2,7 +2,7 @@ Platforma testowa:
 Procesor: Intel i7-4700MQ 2.4G
 RAM: 8GB DDR3
 Dyst: SSHD 1T + 8G
-
+Java 8
 
 Konfigurcaja:
 -Xmx32m -Xms16m -Xmn8m
